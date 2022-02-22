@@ -1,0 +1,67 @@
+.qaMainContainer {
+  width: 100%;
+
+  background-color: #0d324d;
+  padding: 30px 10px;
+  color: white;
+}
+
+.qaContainer {
+  width: 90%;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  margin: auto;
+  background-color: #d14081;
+  border-radius: 10px;
+}
+
+.qaFlexLeft {
+  width: 35%;
+  font-size: 1.5rem;
+}
+
+.qaFlexRight {
+  width: 60%;
+  margin: 20px 5px;
+}
+
+.qaFlexCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.qQuestionBox {
+  background-color: #00a6fb;
+  margin-bottom: 1.5rem;
+  border-radius: 10px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.qQuestion {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 5px;
+  background-color: #00a6fb;
+  margin: 10px 0;
+  border-radius: 10px;
+  flex-wrap: nowrap;
+}
+
+.qQuestion h3 {
+  font-size: 1.5rem;
+  margin: 5px 0;
+}
+
+.qQuestion span {
+  line-height: 1.3rem;
+}
+
+.qQuestionButton {
+  margin-top: -20px;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+}

@@ -1,0 +1,107 @@
+:root {
+  --tourpurple: #5f0f40;
+  --tourred: #9a031e;
+  --touryellow: #fb8b24;
+  --tourorange: #e36414;
+  --tourblue: #0f4c5c;
+}
+
+.loadingh2 {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 20%;
+  margin-bottom: 20px;
+}
+
+.tourRefreshBtn {
+  padding: 10px 20px;
+  width: 50%;
+  display: block;
+  margin: 20px auto;
+  background-color: var(--tourblue);
+  color: white;
+  font-size: 1.5rem;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.tourMainContainer {
+  width: 100%;
+  max-height: 100vh;
+  overflow-y: hidden;
+  background-color: var(--tourpurple);
+  color: white;
+  display: block;
+  margin: auto;
+}
+
+.tourContainer h2 {
+  text-align: center;
+  margin: auto;
+  font-size: 2rem;
+  padding: 10px;
+  transition: 1s;
+  width: 73%;
+  text-align: center;
+}
+
+.tourContainer h2:hover {
+  color: black;
+  background-color: var(--touryellow);
+}
+
+.tourContainer > div {
+  width: 73%;
+  background-color: var(--tourred);
+  color: black;
+  display: block;
+  margin: 5px auto;
+  max-height: 90vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  box-shadow: var(--boxshadow);
+  max-width: 800px;
+}
+
+.tour > img {
+  width: 90%;
+  height: 21rem;
+  object-fit: cover;
+  border-radius: 7px;
+  display: block;
+  margin: 10px auto;
+}
+
+.tour h2 {
+  scroll-snap-align: start;
+}
+
+.tour p {
+  font-size: 1.1rem;
+  padding: 15px 10px;
+  text-align: center;
+}
+
+.tour > p > span {
+  color: var(--touryellow);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tour > span {
+  font-size: 1.5rem;
+  display: inline-block;
+  margin-top: -23px;
+  padding: 5px;
+}
+
+.notInterestedBtn {
+  display: block;
+  margin: auto;
+  background-color: var(--touryellow);
+  padding: 5px 20px;
+  width: 50%;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}

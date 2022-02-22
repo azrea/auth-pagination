@@ -1,0 +1,131 @@
+.sun {
+  width: 20rem;
+  position: fixed;
+  top: -6rem;
+  right: -8rem;
+}
+
+.moon {
+  width: 20rem;
+  position: fixed;
+  bottom: -6rem;
+  left: -8rem;
+}
+.star {
+  width: 0.7rem;
+  position: absolute;
+}
+
+.yellowStar {
+  top: 5rem;
+  left: 5rem;
+}
+
+.planet {
+  width: 5rem;
+  position: absolute;
+}
+
+.multipleStars {
+  width: 1rem;
+  bottom: 2rem;
+  right: 5rem;
+}
+
+@media (min-width: 1000px) and (max-width: 1400px) {
+  .sun {
+    position: fixed;
+    top: -12rem;
+    right: -15rem;
+    width: 40rem;
+  }
+
+  .moon {
+    position: fixed;
+    bottom: -10rem;
+    left: -10rem;
+    width: 30rem;
+  }
+
+  .star {
+    width: 1rem;
+    position: absolute;
+  }
+
+  .yellowStar {
+    top: 15rem;
+    left: 2rem;
+  }
+
+  .multipleStars {
+    width: 1rem;
+    bottom: 2rem;
+    left: 30rem;
+  }
+
+  .planet {
+    position: absolute;
+    width: 12rem;
+    bottom: -3rem;
+    right: 20rem;
+  }
+
+  .blueStar {
+    bottom: 10rem;
+    right: 20rem;
+  }
+
+  .redStar {
+    top: 20rem;
+    left: 13rem;
+  }
+}
+
+@media (min-width: 1400px) {
+  .sun {
+    position: fixed;
+    top: -20rem;
+    right: -20rem;
+    width: 50rem;
+  }
+
+  .moon {
+    position: fixed;
+    bottom: -10rem;
+    left: -10rem;
+    width: 40rem;
+  }
+
+  .star {
+    width: 0.75rem;
+    position: absolute;
+  }
+
+  .yellowStar {
+    top: 15rem;
+    left: 2rem;
+  }
+
+  .multipleStars {
+    width: 1rem;
+    bottom: 2rem;
+    left: 40rem;
+  }
+
+  .planet {
+    position: absolute;
+    width: 12rem;
+    bottom: -5rem;
+    right: 30rem;
+  }
+
+  .blueStar {
+    bottom: 10rem;
+    right: 36rem;
+  }
+
+  .redStar {
+    top: 20rem;
+    left: 13rem;
+  }
+}
