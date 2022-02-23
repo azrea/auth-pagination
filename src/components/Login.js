@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FormContainer } from "./StyledComponents";
 import { Link } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ setAuth }) => {
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -17,7 +17,9 @@ const Login = () => {
         body: JSON.stringify(user),
       });
       const data = await res.json();
-      console.log(data);
+
+      localStorage.setItem("token", data);
+      setAuth(true);
     } catch (error) {
       console.log(error);
     }
@@ -46,9 +48,9 @@ const Login = () => {
       </form>
       <span>
         Don't have an account?
-        <button className="registerBtn">
-          <Link to="/register">Register</Link>
-        </button>
+        <Link to="/register" className="registerBtn">
+          <button>Register</button>
+        </Link>
       </span>
     </FormContainer>
   );

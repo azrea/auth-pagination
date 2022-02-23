@@ -19,22 +19,6 @@ export const FormContainer = styled.div`
     padding: 0.5rem;
   }
 
-  button {
-    width: 80%;
-    padding: 0.5rem;
-    margin: 1rem auto;
-    border: solid 2px black;
-    border-radius: 7px;
-    background-color: lightgreen;
-    font-size: 1.5rem;
-    font-weight: 800;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: green;
-      color: whitesmoke;
-    }
-  }
   h1 {
     text-align: center;
     margin: auto;
@@ -47,6 +31,7 @@ export const FormContainer = styled.div`
     align-items: center;
     width: 70%;
     font-size: 1.5rem;
+    margin: auto;
 
     button {
       width: 60%;
@@ -65,4 +50,55 @@ export const MainContainer = styled.main`
   width: 100%;
   height: 100vh;
   margin: auto;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    width: 60%;
+  }
+  button {
+    width: 80%;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    border: solid 2px black;
+    border-radius: 7px;
+    background-color: lightgreen;
+    font-size: 1.5rem;
+    font-weight: 800;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: green;
+      color: whitesmoke;
+    }
+  }
 `;
+
+export const DashboardContainer = styled.div`
+  .logoutBtn {
+    background-color: #ff6961;
+
+    &:hover {
+      background-color: #ff2014;
+    }
+  }
+`;
+
+export const Alert = styled.div``;
+
+//   button {
+//     width: 80%;
+//     padding: 0.5rem;
+//     margin: 1rem auto;
+//     border: solid 2px black;
+//     border-radius: 7px;
+//     background-color: lightgreen;
+//     font-size: 1.5rem;
+//     font-weight: 800;
+//     transition: all 0.3s ease;
+
+//     &:hover {
+//       background-color: green;
+//       color: whitesmoke;
+//     }
+//   }

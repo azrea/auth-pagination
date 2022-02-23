@@ -1,14 +1,10 @@
 import React, { useState } from "react";
-import {
-  BrowserRouter as Router,
-  Route,
-  useNavigate,
-  Routes,
-} from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Register from "./components/Register";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import RequireAuth from "./components/RequireAuth";
+import { MainContainer } from "./components/StyledComponents";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -17,16 +13,16 @@ const App = () => {
     setIsAuthenticated(boolean);
   };
   return (
-    <>
+    <MainContainer>
       <Routes>
         <Route
-          path="/"
+          path="/login"
           element={
             <RequireAuth
-              redirectAddress={"/dashboard"}
+              redirectAddress={"/"}
               isAuthenticated={!isAuthenticated}
             >
-              <Login />
+              <Login setAuth={setAuth} />
             </RequireAuth>
           }
         />
@@ -34,27 +30,27 @@ const App = () => {
           path="/register"
           element={
             <RequireAuth
-              redirectAddress={"/dashboard"}
+              redirectAddress={"/"}
               isAuthenticated={!isAuthenticated}
             >
-              <Register />
+              <Register setAuth={setAuth} />
             </RequireAuth>
           }
         />
         {/* made the login my homepage just because this is an auth page right now */}
         <Route
-          path="/dashboard"
+          path="/"
           element={
             <RequireAuth
-              redirectAddress={"/"}
+              redirectAddress={"/login"}
               isAuthenticated={isAuthenticated}
             >
-              <Dashboard />
+              <Dashboard setAuth={setAuth} />
             </RequireAuth>
           }
         />
       </Routes>
-    </>
+    </MainContainer>
   );
 };
 
