@@ -83,22 +83,3 @@ export const DashboardContainer = styled.div`
     }
   }
 `;
-
-export const Alert = styled.div``;
-
-//   button {
-//     width: 80%;
-//     padding: 0.5rem;
-//     margin: 1rem auto;
-//     border: solid 2px black;
-//     border-radius: 7px;
-//     background-color: lightgreen;
-//     font-size: 1.5rem;
-//     font-weight: 800;
-//     transition: all 0.3s ease;
-
-//     &:hover {
-//       background-color: green;
-//       color: whitesmoke;
-//     }
-//   }
