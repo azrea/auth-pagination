@@ -6,9 +6,10 @@ import Dashboard from "./components/Dashboard";
 import RequireAuth from "./components/RequireAuth";
 import { MainContainer } from "./components/StyledComponents";
 import { AppProvider } from "./components/Context";
+// import HomePage from "./projects/Business Store/pages/HomePage";
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
   const [message, setMessage] = useState("");
 
   const setAuth = (boolean) => {
@@ -87,6 +88,7 @@ const App = () => {
             }
           />
           {/* this is where my project links will go */}
+          {/* <Route path="/home" element={<HomePage />}></Route> */}
         </Routes>
       </MainContainer>
     </AppProvider>
