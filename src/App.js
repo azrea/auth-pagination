@@ -5,9 +5,11 @@ import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import RequireAuth from "./components/RequireAuth";
 import { MainContainer } from "./components/StyledComponents";
+import { AppProvider } from "./components/Context";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [message, setMessage] = useState("");
 
   const setAuth = (boolean) => {
     setIsAuthenticated(boolean);
@@ -31,45 +33,63 @@ const App = () => {
   useEffect(() => {
     isAuth();
   });
+  useEffect(() => {
+    let timer = setTimeout(() => setMessage(""), 3000);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [message]);
+
   return (
-    <MainContainer>
-      <Routes>
-        <Route
-          path="/login"
-          element={
-            <RequireAuth
-              redirectAddress={"/"}
-              isAuthenticated={!isAuthenticated}
-            >
-              <Login setAuth={setAuth} />
-            </RequireAuth>
-          }
-        />
-        <Route
-          path="/register"
-          element={
-            <RequireAuth
-              redirectAddress={"/"}
-              isAuthenticated={!isAuthenticated}
-            >
-              <Register setAuth={setAuth} />
-            </RequireAuth>
-          }
-        />
-        {/* made the login my homepage just because this is an auth page right now */}
-        <Route
-          path="/"
-          element={
-            <RequireAuth
-              redirectAddress={"/login"}
-              isAuthenticated={isAuthenticated}
-            >
-              <Dashboard setAuth={setAuth} />
-            </RequireAuth>
-          }
-        />
-      </Routes>
-    </MainContainer>
+    <AppProvider>
+      <MainContainer>
+        <Routes>
+          <Route
+            path="/login"
+            element={
+              <RequireAuth
+                redirectAddress={"/"}
+                isAuthenticated={!isAuthenticated}
+              >
+                <Login
+                  setAuth={setAuth}
+                  message={message}
+                  setMessage={setMessage}
+                />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/register"
+            element={
+              <RequireAuth
+                redirectAddress={"/"}
+                isAuthenticated={!isAuthenticated}
+              >
+                <Register
+                  setAuth={setAuth}
+                  message={message}
+                  setMessage={setMessage}
+                />
+              </RequireAuth>
+            }
+          />
+          <Route
+            path="/"
+            element={
+              <RequireAuth
+                redirectAddress={"/login"}
+                isAuthenticated={isAuthenticated}
+              >
+                <Dashboard setAuth={setAuth} />
+              </RequireAuth>
+            }
+          />
+          {/* this is where my project links will go */}
+        </Routes>
+      </MainContainer>
+    </AppProvider>
   );
 };
 

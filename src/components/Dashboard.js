@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { DashboardContainer } from "./StyledComponents";
+import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
@@ -29,7 +30,8 @@ const Dashboard = ({ setAuth }) => {
   }, []);
   return (
     <DashboardContainer>
-      <h1>DashBoard</h1>
+      <h1 className="welcome">DashBoard</h1>
+
       <button className="logoutBtn" onClick={(e) => logout(e)}>
         Log out
       </button>

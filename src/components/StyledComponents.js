@@ -31,12 +31,12 @@ export const FormContainer = styled.div`
     align-items: center;
     width: 70%;
     font-size: 1.5rem;
-    margin: auto;
+    margin: 2rem auto;
 
     button {
       width: 60%;
       background-color: lightblue;
-
+      margin: auto 1rem;
       &:hover {
         background-color: blue;
         color: whitesmoke;
@@ -50,6 +50,7 @@ export const MainContainer = styled.main`
   width: 100%;
   height: 100vh;
   margin: auto;
+  padding-top: 5rem;
 
   a {
     text-decoration: none;
@@ -75,11 +76,31 @@ export const MainContainer = styled.main`
 `;
 
 export const DashboardContainer = styled.div`
+  .welcome {
+    text-align: center;
+  }
   .logoutBtn {
     background-color: #ff6961;
+    display: block;
+    margin: auto;
 
     &:hover {
       background-color: #ff2014;
     }
   }
+`;
+
+export const Alert = styled.div`
+  position: absolute;
+  width: 80%;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 1rem;
+  font-size: 2rem;
+  border-radius: 10px;
+  background-color: red;
+  font-weight: 700;
+  color: black;
+  text-align: center;
 `;

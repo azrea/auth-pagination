@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { FormContainer } from "./StyledComponents";
+import { FormContainer, Alert } from "./StyledComponents";
 import { Link } from "react-router-dom";
 
-const Register = ({ setAuth }) => {
+const Register = ({ setAuth, message, setMessage }) => {
   const [user, setUser] = useState({
     name: "",
     email: "",
@@ -30,10 +30,12 @@ const Register = ({ setAuth }) => {
     } catch (err) {
       console.error(err);
       setAuth(false);
+      setMessage("Registration failed");
     }
   }
   return (
     <FormContainer>
+      {message && <Alert>{message}</Alert>}
       <h1>Register</h1>
       <form onSubmit={handleSubmit}>
         <input

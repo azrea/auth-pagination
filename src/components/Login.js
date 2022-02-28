@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { FormContainer } from "./StyledComponents";
+import { FormContainer, Alert } from "./StyledComponents";
 import { Link } from "react-router-dom";
 
-const Login = ({ setAuth }) => {
+const Login = ({ setAuth, message, setMessage }) => {
   const [user, setUser] = useState({
     email: "",
     password: "",
@@ -22,11 +22,13 @@ const Login = ({ setAuth }) => {
       setAuth(true);
     } catch (error) {
       console.log(error);
+      setMessage("Login Failed");
     }
   }
   const { email, password } = user;
   return (
     <FormContainer>
+      {message && <Alert>{message}</Alert>}
       <h1>Login</h1>
       <form onSubmit={handleSubmit}>
         <input
