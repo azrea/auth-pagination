@@ -1,5 +1,34 @@
 import styled from "styled-components";
 
+export const MainContainer = styled.main`
+  max-width: 1000px;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+    width: 60%;
+  }
+  button {
+    width: 80%;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    border: solid 2px black;
+    border-radius: 7px;
+    background-color: lightgreen;
+    font-size: 1.5rem;
+    font-weight: 800;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: green;
+      color: whitesmoke;
+    }
+  }
+`;
+
 export const FormContainer = styled.div`
   form {
     width: 100%;
@@ -41,36 +70,6 @@ export const FormContainer = styled.div`
         background-color: blue;
         color: whitesmoke;
       }
-    }
-  }
-`;
-
-export const MainContainer = styled.main`
-  max-width: 1000px;
-  width: 100%;
-  height: 100vh;
-  margin: auto;
-  padding-top: 5rem;
-
-  a {
-    text-decoration: none;
-    color: inherit;
-    width: 60%;
-  }
-  button {
-    width: 80%;
-    padding: 0.5rem;
-    margin: 1rem auto;
-    border: solid 2px black;
-    border-radius: 7px;
-    background-color: lightgreen;
-    font-size: 1.5rem;
-    font-weight: 800;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: green;
-      color: whitesmoke;
     }
   }
 `;

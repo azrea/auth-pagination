@@ -84,6 +84,7 @@ const Hero = () => {
           </Link>
         </div>
       </ChristmasHeroContainer>
+
       <HeroContainer className={`${show === 2 ? "show" : "hide"}`}>
         <div className="info">
           <h2>Look no further for the greatest offers</h2>
