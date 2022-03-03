@@ -1,12 +1,15 @@
 import React from "react";
+import NavBar from "../components/NavBar";
+import { StyledHomePage } from "../components/StyledComponents";
 
 const Homepage = () => {
   return (
-    <div>
-      {/* nav */}
+    <StyledHomePage>
+      <NavBar />
+      {/* 3 heroes with themes e.g movie pictures and games */}
 
-      {/* 3 heroes  */}
-    </div>
+      <div className="hero">chopin</div>
+    </StyledHomePage>
   );
 };
 

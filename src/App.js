@@ -5,8 +5,8 @@ import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import RequireAuth from "./components/RequireAuth";
 import { MainContainer } from "./components/StyledComponents";
-import { AppProvider } from "./components/Context";
-import Homepage from "./components/Homepage";
+import { AppProvider } from "./Context";
+import Homepage from "./Pages/Homepage";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
