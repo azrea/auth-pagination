@@ -6,6 +6,7 @@ import Dashboard from "./components/Dashboard";
 import RequireAuth from "./components/RequireAuth";
 import { MainContainer } from "./components/StyledComponents";
 import { AppProvider } from "./components/Context";
+import Homepage from "./components/Homepage";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -45,6 +46,7 @@ const App = () => {
     <AppProvider>
       <MainContainer>
         <Routes>
+          <Route path="/" element={<Homepage />} />
           <Route
             path="/login"
             element={
@@ -76,7 +78,7 @@ const App = () => {
             }
           />
           <Route
-            path="/"
+            path="/dashboard"
             element={
               <RequireAuth
                 redirectAddress={"/login"}
@@ -86,7 +88,6 @@ const App = () => {
               </RequireAuth>
             }
           />
-          {/* this is where my project links will go */}
         </Routes>
       </MainContainer>
     </AppProvider>
