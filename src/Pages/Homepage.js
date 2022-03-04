@@ -8,7 +8,7 @@ const Homepage = () => {
       <NavBar />
       {/* 3 heroes with themes e.g movie pictures and games */}
 
-      <div className="hero">chopin</div>
+      <div className="hero"></div>
     </StyledHomePage>
   );
 };

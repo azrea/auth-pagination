@@ -113,6 +113,7 @@ export const Alert = styled.div`
 export const StyledHomePage = styled.main`
   nav {
     position: fixed;
+    z-index: 100;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -140,14 +141,16 @@ export const StyledHomePage = styled.main`
         margin: 2rem auto;
         width: 90%;
         padding: 0.5em;
+        font-size: 1.3em;
       }
     }
   }
 
   .hero {
     color: white;
-    padding-top: 150px;
-    background-color: black;
+    position: absolute;
+    top: 165px;
+    background-image: linear-gradient(${blue}, ${white});
     min-height: 200px;
     width: 100%;
   }
