@@ -151,7 +151,7 @@ export const StyledHomePage = styled.main`
   }
 
   .hero {
-    color: white;
+    color: ${white};
     position: absolute;
     top: 165px;
     background-image: linear-gradient(${blue}, ${white});
@@ -161,11 +161,25 @@ export const StyledHomePage = styled.main`
     display: flex;
     justify-content: center;
 
+    img {
+      width: 50%;
+      border-radius: 7px;
+      border: solid 2px ${black};
+    }
+
     .flexHero {
       width: 70%;
       display: flex;
       justify-content: space-between;
       margin-bottom: 5rem;
+
+      span {
+        line-height: 1.5;
+        font-size: 1.4rem;
+        h1 {
+          color: ${black};
+        }
+      }
     }
   }
 `;

@@ -1,37 +1,17 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { StyledHero } from "./StyledComponents";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
+import HeroSlide from "./HeroSlide";
 
 const Hero = () => {
-  const [show, setShow] = useState(3);
-
-  useEffect(() => {
-    setShow(1);
-  }, []);
-
-  useEffect(() => {
-    const slideInterval = setInterval(() => {
-      let int = 1;
-      slideMove(int);
-    }, 5000);
-
-    return () => clearInterval(slideInterval);
-  });
-
-  function slideMove(number) {
-    let val = show + number;
-    if (val < 1) {
-      val = 3;
-    }
-    if (val > 3) {
-      val = 1;
-    }
-    setShow(val);
-  }
-
-  return <StyledHero></StyledHero>;
+  return (
+    <div className="hero">
+      <HeroSlide
+        collection="Star"
+        price="10.99"
+        name="Starry Nightmare"
+        image="https://i.pinimg.com/originals/6e/72/b1/6e72b1797831868d5f769a2a4bc0e1fe.jpg"
+      />
+    </div>
+  );
 };
 
 export default Hero;
