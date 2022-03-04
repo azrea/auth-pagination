@@ -5,7 +5,7 @@ import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import RequireAuth from "./components/RequireAuth";
 import { MainContainer } from "./components/StyledComponents";
-import { AppProvider } from "./Context";
+
 import Homepage from "./Pages/Homepage";
 
 const App = () => {
@@ -43,54 +43,52 @@ const App = () => {
   }, [message]);
 
   return (
-    <AppProvider>
-      <MainContainer>
-        <Routes>
-          <Route path="/" element={<Homepage />} />
-          <Route
-            path="/login"
-            element={
-              <RequireAuth
-                redirectAddress={"/"}
-                isAuthenticated={!isAuthenticated}
-              >
-                <Login
-                  setAuth={setAuth}
-                  message={message}
-                  setMessage={setMessage}
-                />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/register"
-            element={
-              <RequireAuth
-                redirectAddress={"/"}
-                isAuthenticated={!isAuthenticated}
-              >
-                <Register
-                  setAuth={setAuth}
-                  message={message}
-                  setMessage={setMessage}
-                />
-              </RequireAuth>
-            }
-          />
-          <Route
-            path="/dashboard"
-            element={
-              <RequireAuth
-                redirectAddress={"/login"}
-                isAuthenticated={isAuthenticated}
-              >
-                <Dashboard setAuth={setAuth} />
-              </RequireAuth>
-            }
-          />
-        </Routes>
-      </MainContainer>
-    </AppProvider>
+    <MainContainer>
+      <Routes>
+        <Route path="/" element={<Homepage />} />
+        <Route
+          path="/login"
+          element={
+            <RequireAuth
+              redirectAddress={"/"}
+              isAuthenticated={!isAuthenticated}
+            >
+              <Login
+                setAuth={setAuth}
+                message={message}
+                setMessage={setMessage}
+              />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/register"
+          element={
+            <RequireAuth
+              redirectAddress={"/"}
+              isAuthenticated={!isAuthenticated}
+            >
+              <Register
+                setAuth={setAuth}
+                message={message}
+                setMessage={setMessage}
+              />
+            </RequireAuth>
+          }
+        />
+        <Route
+          path="/dashboard"
+          element={
+            <RequireAuth
+              redirectAddress={"/login"}
+              isAuthenticated={isAuthenticated}
+            >
+              <Dashboard setAuth={setAuth} />
+            </RequireAuth>
+          }
+        />
+      </Routes>
+    </MainContainer>
   );
 };
 

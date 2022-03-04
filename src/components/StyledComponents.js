@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const black = "#1e152a";
-const pink = "#fc60a8";
+const red = "#fc60a8";
 const blue = "#5ab1bb";
 const white = "#faf3dd";
 const green = "#0c8346";
@@ -137,6 +137,10 @@ export const StyledHomePage = styled.main`
       font-size: 1em;
       text-align: center;
 
+      h1 {
+        text-decoration: underline;
+      }
+
       input {
         margin: 2rem auto;
         width: 90%;
@@ -153,5 +157,15 @@ export const StyledHomePage = styled.main`
     background-image: linear-gradient(${blue}, ${white});
     min-height: 200px;
     width: 100%;
+    padding: 4rem;
+    display: flex;
+    justify-content: center;
+
+    .flexHero {
+      width: 70%;
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 5rem;
+    }
   }
 `;
