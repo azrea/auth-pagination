@@ -4,6 +4,7 @@ import HeroSlide from "./HeroSlide";
 const Hero = () => {
   return (
     <div className="hero">
+      {/* add arrows to navigate the slides */}
       <HeroSlide
         collection="Star"
         price="10.99"
