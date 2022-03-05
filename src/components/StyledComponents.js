@@ -168,14 +168,14 @@ export const StyledHomePage = styled.main`
     }
 
     .flexHero {
-      width: 70%;
+      width: 80%;
       display: flex;
       justify-content: space-between;
       margin-bottom: 5rem;
 
       span {
-        line-height: 1.5;
-        font-size: 1.4rem;
+        line-height: 1.4;
+        font-size: 1.2rem;
         h1 {
           color: ${black};
         }
