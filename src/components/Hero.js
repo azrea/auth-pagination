@@ -1,7 +1,11 @@
 import React, { useState, useEffect } from "react";
 import HeroSlide from "./HeroSlide";
+import store from "../Redux/store";
+import { getPopularMovies } from "../Redux/actions";
 
 const Hero = () => {
+  store.dispatch(getPopularMovies);
+
   return (
     <div className="hero">
       {/* add arrows to navigate the slides */}
