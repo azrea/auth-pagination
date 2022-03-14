@@ -1,6 +1,6 @@
 import data from "../../data";
-const products = (store = data, action) => {
-  return products;
+const products = (state = data, action) => {
+  return state;
 };
 
 export default products;

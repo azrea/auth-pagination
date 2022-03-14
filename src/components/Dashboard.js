@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { DashboardContainer } from "./StyledComponents";
-import { Link, Outlet } from "react-router-dom";
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");

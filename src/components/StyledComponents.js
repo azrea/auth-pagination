@@ -183,3 +183,5 @@ export const StyledHomePage = styled.main`
     }
   }
 `;
+
+export const MovieContainer = styled.div``;

@@ -1,8 +1,8 @@
 import { combineReducers } from "redux";
 import products from "./productsReducer";
+import movies from "./movieReducer";
 
-const storeApp = combineReducers({
+export default combineReducers({
   products,
+  movies,
 });
-
-export default storeApp;
