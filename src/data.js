@@ -1,9 +1,11 @@
 // eslint-disable-next-line import/no-anonymous-default-export
-export default [
+import StarInAJar from "./images/Star in a Jar.jpeg";
+import LightingUpTheStars from "./images/Lighting up the stars.jpeg";
+const products = [
   {
     id: 1,
-    url: "https://images.pexels.com/photos/1274260/pexels-photo-1274260.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     name: "Star in a jar",
+    url: StarInAJar,
     price: 231.99,
     freeShipping: false,
     category: "The Night Sky",
@@ -12,7 +14,7 @@ export default [
   {
     id: 2,
     name: "Lighting up the Stars",
-    url: "https://images.pexels.com/photos/1830252/pexels-photo-1830252.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+    url: LightingUpTheStars,
     price: 400.99,
     freeShipping: true,
     category: "The Night Sky",
@@ -48,7 +50,7 @@ export default [
   {
     id: 6,
     name: "Luffy",
-    url: "https://mocah.org/uploads/posts/341334-Monkey-D-Luffy-Snakeman-Gear-Fourth-One-Piece-Anime.jpg",
+    url: "https://img.webnovel.com/bookcover/19617399706901905/300/300.jpg?updateTime=1616396816281",
     price: 250,
     freeShipping: true,
     category: "Anime",
@@ -325,3 +327,5 @@ export default [
     amount: 0,
   },
 ];
+
+export default products;

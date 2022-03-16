@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { keyframes } from "styled-components";
 
 const black = "#1e152a";
 const red = "#fc60a8";
@@ -6,6 +7,11 @@ const blue = "#5ab1bb";
 const white = "#faf3dd";
 const green = "#0c8346";
 const yellow = "#f7dd72";
+
+const intro = keyframes`
+0%{opacity:0};
+40%{opacity:1 };
+100%{opacity:0 };`;
 
 export const MainContainer = styled.main`
   width: 100%;
@@ -155,7 +161,7 @@ export const StyledHomePage = styled.main`
     position: absolute;
     top: 165px;
     background-image: linear-gradient(${blue}, ${white});
-    min-height: 200px;
+    min-height: 800px;
     width: 100%;
     padding: 4rem;
     display: flex;
@@ -165,13 +171,18 @@ export const StyledHomePage = styled.main`
       width: 50%;
       border-radius: 7px;
       border: solid 2px ${black};
+      margin: 0 5px;
     }
 
     .flexHero {
+      position: absolute;
       width: 80%;
       display: flex;
       justify-content: space-between;
       margin-bottom: 5rem;
+      transition: all 1s ease-in-out;
+      animation-name: ${intro};
+      animation-duration: 5s;
 
       span {
         line-height: 1.4;

@@ -5,7 +5,6 @@ import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import RequireAuth from "./components/RequireAuth";
 import { MainContainer } from "./components/StyledComponents";
-
 import Homepage from "./Pages/Homepage";
 
 const App = () => {

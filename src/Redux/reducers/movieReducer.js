@@ -1,27 +1,13 @@
-import * as actions from "../actions/actionTypes";
+import * as actionTypes from "../actions/actionTypes";
 
-const initialState = {
-  popularMovies: [],
-};
-
-async function fetchMovies(url) {
-  try {
-    const res = await fetch(url);
-    const data = await res.json();
-    console.log(data);
-    return data;
-  } catch (err) {
-    console.log(err);
-  }
-}
+const initialState = [{ popularMovies: {} }];
 
 export const movies = (state = initialState, action) => {
-  if (action.type === actions.getPopularMovies) {
-    const popularMovies = fetchMovies(action.url);
-
-    return [...state, { popularMovies: popularMovies }];
+  if (action.type === actionTypes.getPopularMovies) {
+    return [...action.payload];
+  } else {
+    return state;
   }
-  return state;
 };
 
 export default movies;
