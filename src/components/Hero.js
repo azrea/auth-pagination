@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import HeroSlide from "./HeroSlide";
 import store from "../Redux/store";
+import { StyledHero } from "./StyledComponents";
 
 const Hero = () => {
   const [number, setNumber] = useState(0);
@@ -17,17 +18,20 @@ const Hero = () => {
     return () => clearInterval(changeSlides);
   });
   return (
-    <div className="hero">
-      {/* add arrows to navigate the slides */}
+    <>
+      <StyledHero positionStart="0" primary>
+        {/* add arrows to navigate the slides */}
 
-      <HeroSlide
-        key={id}
-        collection={category}
-        price={price}
-        name={name}
-        image={url}
-      />
-    </div>
+        <HeroSlide
+          key={id}
+          collection={category}
+          price={price}
+          name={name}
+          image={url}
+        />
+      </StyledHero>
+      <StyledHero positionStart="100vh"></StyledHero>
+    </>
   );
 };
 

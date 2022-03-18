@@ -23,22 +23,6 @@ export const MainContainer = styled.main`
     color: inherit;
     width: 60%;
   }
-  button {
-    width: 80%;
-    padding: 0.5rem;
-    margin: 1rem auto;
-    border: solid 2px ${black};
-    border-radius: 7px;
-    background-color: lightgreen;
-    font-size: 1.5rem;
-    font-weight: 800;
-    transition: all 0.3s ease;
-
-    &:hover {
-      background-color: ${green};
-      color: ${white};
-    }
-  }
 `;
 
 export const FormContainer = styled.div`
@@ -58,6 +42,23 @@ export const FormContainer = styled.div`
     border: solid 2px ${black};
     border-radius: 7px;
     padding: 0.5rem;
+  }
+
+  button {
+    width: 80%;
+    padding: 0.5rem;
+    margin: 1rem auto;
+    border: solid 2px ${black};
+    border-radius: 7px;
+    background-color: lightgreen;
+    font-size: 1.5rem;
+    font-weight: 800;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: ${green};
+      color: ${white};
+    }
   }
 
   h1 {
@@ -117,82 +118,145 @@ export const Alert = styled.div`
 `;
 
 export const StyledHomePage = styled.main`
-  nav {
-    position: fixed;
-    z-index: 100;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    background-color: ${white};
-    .logoImg {
-      padding: 5px 1em 0;
-      width: 9%;
-      object-fit: contain;
-      height: min-content;
-      align-self: center;
-
-      img {
-        height: 100px;
-        align-self: center;
-      }
-    }
-    span {
-      width: 100%;
-      margin: 0 auto;
-      align-self: flex-start;
-      font-size: 1em;
-      text-align: center;
-
-      h1 {
-        text-decoration: underline;
-      }
-
-      input {
-        margin: 2rem auto;
-        width: 90%;
-        padding: 0.5em;
-        font-size: 1.3em;
-      }
-    }
-  }
-
-  .hero {
-    color: ${white};
-    position: absolute;
-    top: 165px;
-    background-image: linear-gradient(${blue}, ${white});
-    min-height: 800px;
-    width: 100%;
-    padding: 4rem;
-    display: flex;
-    justify-content: center;
+  .logoImg {
+    padding: 5px 1em 0;
+    width: 9%;
+    object-fit: contain;
+    height: min-content;
+    align-self: center;
 
     img {
-      width: 50%;
-      border-radius: 7px;
-      border: solid 2px ${black};
-      margin: 0 5px;
+      height: 100px;
+      align-self: center;
     }
+  }
+  span {
+    width: 100%;
+    margin: 0 auto;
+    align-self: flex-start;
+    font-size: 1em;
+    text-align: center;
 
-    .flexHero {
-      position: absolute;
-      width: 80%;
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 5rem;
-      transition: all 1s ease-in-out;
-      animation-name: ${intro};
-      animation-duration: 5s;
-
-      span {
-        line-height: 1.4;
-        font-size: 1.2rem;
-        h1 {
-          color: ${black};
-        }
-      }
+    h1 {
+      text-decoration: underline;
     }
   }
 `;
 
 export const MovieContainer = styled.div``;
+
+export const StyledNav = styled.nav`
+  position: fixed;
+  z-index: 50;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  background-color: ${black};
+
+  .welcomeMessage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    button {
+      margin-top: 3px;
+      width: 10%;
+      background-color: ${white};
+      border: none;
+    }
+    input {
+      margin: 2rem auto;
+      width: 90%;
+      padding: 0.5em;
+      font-size: 1em;
+    }
+  }
+`;
+
+export const StyledHero = styled.div`
+  z-index: 1;
+  color: ${white};
+  position: absolute;
+  top: ${(props) => props.positionStart || 0};
+  background-image: ${(props) =>
+    props.primary
+      ? `linear-gradient(${blue}, ${black})`
+      : `linear-gradient(${black}, ${red})`};
+  min-height: 100vh;
+  width: 100%;
+  padding: 165px;
+  display: flex;
+  // justify-content: center;}
+
+  img {
+    width: 50%;
+    border-radius: 7px;
+    border: solid 2px ${black};
+    margin: 0 5px;
+  }
+
+  .flexHero {
+    z-index: 2;
+    position: absolute;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5rem;
+    transition: all 1s ease-in-out;
+    animation-name: ${intro};
+    animation-duration: 10s;
+  }
+
+  span {
+    line-height: 1.4;
+    font-size: 1.2rem;
+    h1 {
+      color: ${black};
+    }
+  }
+`;
+
+export const StyledPictureGrid = styled.div`
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  z-index: 10;
+  top: 60%;
+
+  padding: 1rem;
+
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 1rem;
+  }
+  .singlePicture {
+    width: 24%;
+    background-size: cover;
+    background-position: center;
+    height: 300px;
+    border-radius: 7px;
+    border: ${white} solid 2px;
+    display: flex;
+
+    text-align: center;
+
+    .text {
+      display: none;
+    }
+
+    &:hover .text {
+      width: 100%;
+      background-color: ${white};
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+`;

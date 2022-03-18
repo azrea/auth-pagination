@@ -1,14 +1,15 @@
 import React, { useEffect } from "react";
 import Hero from "../components/Hero";
 import NavBar from "../components/NavBar";
+import PictureGrid from "../components/PictureGrid";
 import { StyledHomePage } from "../components/StyledComponents";
 
 const Homepage = () => {
   return (
     <StyledHomePage>
       <NavBar />
-      {/* 3 heroes with themes e.g movie pictures and games */}
       <Hero />
+      <PictureGrid />
     </StyledHomePage>
   );
 };

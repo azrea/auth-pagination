@@ -1,22 +1,14 @@
 import React from "react";
 import logoImg from "../images/logoImage.png";
+import { StyledNav } from "./StyledComponents";
 
 const NavBar = () => {
   return (
-    <nav>
+    <StyledNav>
       <div className="logoImg">
         <img src={logoImg} alt="Logo" />
       </div>
-
-      <span className="welcomeMessage">
-        <a href="">
-          <h4>Hello</h4>
-          <h1>Guest</h1>
-        </a>
-
-        <input type="text" className="searchBox" placeholder="Search here..." />
-      </span>
-    </nav>
+    </StyledNav>
   );
 };
 
