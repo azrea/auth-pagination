@@ -3,7 +3,7 @@ import SinglePicture from "./SinglePicture";
 import { StyledPictureGrid } from "./StyledComponents";
 import store from "../Redux/store";
 
-const products = store.getState().products;
+const products = store.getState().products.data;
 
 function randomNumber(number) {
   return Math.floor(Math.random() * number);
@@ -12,11 +12,14 @@ function randomNumber(number) {
 const PictureGrid = () => {
   return (
     <StyledPictureGrid>
-      <PictureRow />
       <h1 style={{ textAlign: "center", fontSize: "2rem", color: "#faf3dd" }}>
         Featured Photos
       </h1>
       <PictureRow />
+      <h1 style={{ textAlign: "center", fontSize: "2rem", color: "#faf3dd" }}>
+        Recently Visited Photos
+      </h1>
+      <RecentsRow />
     </StyledPictureGrid>
   );
 };
@@ -33,11 +36,15 @@ const PictureRow = () => {
         <h1>Loading</h1>
       ) : (
         [...productsArray].map((no) => {
-          return <SinglePicture {...products[no]} />;
+          return <SinglePicture key={no} {...products[no]} />;
         })
       )}
     </div>
   );
+};
+
+const RecentsRow = () => {
+  return <></>;
 };
 
 export default PictureGrid;

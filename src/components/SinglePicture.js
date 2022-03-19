@@ -1,11 +1,17 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
-const SinglePicture = ({ name, price, url }) => {
+const SinglePicture = ({ name, price, url, id }) => {
+  let navigate = useNavigate();
   return (
     <div
+      onClick={() => {
+        navigate(`products/${id}`);
+      }}
       className="singlePicture"
       style={{
         backgroundImage: `url(${url})`,
+        cursor: "pointer",
       }}
       image={url}
     >

@@ -6,7 +6,7 @@ import { StyledHero } from "./StyledComponents";
 const Hero = () => {
   const [number, setNumber] = useState(0);
 
-  const state = store.getState().products;
+  const state = store.getState().products.data;
 
   const { id, category, price, name, url } = state[number];
 
@@ -20,8 +20,6 @@ const Hero = () => {
   return (
     <>
       <StyledHero positionStart="0" primary>
-        {/* add arrows to navigate the slides */}
-
         <HeroSlide
           key={id}
           collection={category}

@@ -6,6 +6,8 @@ import Dashboard from "./components/Dashboard";
 import RequireAuth from "./components/RequireAuth";
 import { MainContainer } from "./components/StyledComponents";
 import Homepage from "./Pages/Homepage";
+import ProductsPage from "./Pages/ProductsPage";
+import PicturePage from "./Pages/PicturePage";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -86,6 +88,9 @@ const App = () => {
             </RequireAuth>
           }
         />
+        <Route path="/products" element={<ProductsPage />} />
+
+        <Route path="/products/:id" element={<PicturePage />} />
       </Routes>
     </MainContainer>
   );
