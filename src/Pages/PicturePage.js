@@ -6,7 +6,7 @@ import * as actions from "../Redux/actions";
 const PicturePage = () => {
   useEffect(() => {
     store.dispatch(actions.addRecentProduct(id));
-  });
+  }, []);
   const { id } = useParams();
   return <div>PicturePage {id}</div>;
 };

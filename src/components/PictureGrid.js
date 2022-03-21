@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import SinglePicture from "./SinglePicture";
 import { StyledPictureGrid } from "./StyledComponents";
 import store from "../Redux/store";
@@ -44,7 +44,21 @@ const PictureRow = () => {
 };
 
 const RecentsRow = () => {
-  return <></>;
+  const recent = store.getState().products.recent;
+
+  return (
+    <div className="row">
+      {/* if recents row is empty then return an empty container else map the recents row to singlePicture component */}
+      {recent.length < 0 ? (
+        <></>
+      ) : (
+        recent.map((number) => {
+          console.log(products[number - 1], number);
+          return <SinglePicture key={number} {...products[number - 1]} />;
+        })
+      )}
+    </div>
+  );
 };
 
 export default PictureGrid;

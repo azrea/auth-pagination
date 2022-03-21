@@ -111,6 +111,15 @@ const products = [
     amount: 0,
   },
   {
+    id: 13,
+    name: "On the Vine",
+    price: 522.35,
+    freeShipping: true,
+    category: "Food",
+    amount: 0,
+    url: "https://images.pexels.com/photos/2294477/pexels-photo-2294477.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  },
+  {
     id: 14,
     name: "Wasteland of Sound",
     url: "http://localhost:3000/static/media/wall3.aca4d334.jfif",
@@ -325,15 +334,6 @@ const products = [
     category: "Food",
     amount: 0,
     url: "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
-  },
-  {
-    id: 13,
-    name: "On the Vine",
-    price: 522.35,
-    freeShipping: true,
-    category: "Food",
-    amount: 0,
-    url: "https://images.pexels.com/photos/2294477/pexels-photo-2294477.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
   },
 ];
 
