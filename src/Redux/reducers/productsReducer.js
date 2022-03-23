@@ -26,7 +26,6 @@ function checkRecent(arr) {
   let set = new Set(arr);
 
   let newArr = [...set];
-  console.log(set);
 
   if (newArr.length > 4) {
     newArr.shift();

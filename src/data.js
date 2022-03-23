@@ -256,7 +256,7 @@ const products = [
   },
   {
     id: 29,
-    name: "Monkey Scrooge",
+    name: "Cautious George",
     url: "https://images.pexels.com/photos/33787/chimpanzee-sitting-sad-mammal.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 525.75,
     freeShipping: true,
@@ -334,6 +334,15 @@ const products = [
     category: "Food",
     amount: 0,
     url: "https://images.pexels.com/photos/1132047/pexels-photo-1132047.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+  },
+  {
+    id: 38,
+    name: "All Eyes on Me",
+    price: 524.56,
+    freeShipping: true,
+    category: "Animals",
+    amount: 0,
+    url: "https://images.pexels.com/photos/50557/peacock-bird-plumage-display-50557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
   },
 ];
 

@@ -260,3 +260,79 @@ export const StyledPictureGrid = styled.div`
     }
   }
 `;
+
+export const StyledPicturePage = styled.div`
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: linear-gradient(${black}, ${white});
+
+  .container {
+    max-height: 800px;
+    position: relative;
+    &:hover .overlay {
+      opacity: 1;
+    }
+    &:hover .title {
+      opacity: 1;
+    }
+
+    img {
+      width: 100%;
+      max-height: 800px;
+      object-fit: contain;
+      border: solid 2px ${white};
+      border-radius: 10px;
+    }
+
+    .title {
+      z-index: 4;
+      background-color: ${white};
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      text-align: center;
+      padding: 0.5rem;
+      transition: all 0.3s ease;
+      opacity: 0;
+      font-size: 1.3rem;
+
+      h1 {
+        margin: 0.25rem auto;
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      background-color: ${black};
+      top: 6px;
+      z-index: 3;
+      height: 100%;
+      width: 100%;
+      border-radius: 10px;
+      transition: all 0.5s ease;
+      opacity: 0;
+    }
+
+    .ctaButtons {
+      position: absolute;
+      top: 53%;
+      left: 50%;
+      transform: translateX(-50%);
+
+      .icon {
+        font-size: 3rem;
+        margin: auto 0.5rem;
+        cursor: pointer;
+        color: ${white};
+      }
+    }
+  }
+`;
