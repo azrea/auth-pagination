@@ -7,7 +7,7 @@ import { StyledHomePage } from "../components/StyledComponents";
 const Homepage = () => {
   return (
     <StyledHomePage>
-      {/* <NavBar /> */}
+      <NavBar />
       <Hero />
       <PictureGrid />
     </StyledHomePage>

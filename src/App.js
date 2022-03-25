@@ -8,7 +8,6 @@ import { MainContainer } from "./components/StyledComponents";
 import Homepage from "./Pages/Homepage";
 import ProductsPage from "./Pages/ProductsPage";
 import PicturePage from "./Pages/PicturePage";
-import NavBar from "./components/NavBar";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -46,7 +45,6 @@ const App = () => {
 
   return (
     <MainContainer>
-      <NavBar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route

@@ -4,20 +4,20 @@ import LightingUpTheStars from "./images/Lighting up the stars.jpeg";
 const products = [
   {
     id: 1,
-    name: "Star in a jar",
-    url: StarInAJar,
+    name: "Cumulus Nimbus",
+    url: "https://images.pexels.com/photos/2114014/pexels-photo-2114014.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 231.99,
     freeShipping: false,
-    category: "The Night Sky",
+    category: "Weather",
     amount: 0,
   },
   {
     id: 2,
-    name: "Lighting up the Stars",
-    url: LightingUpTheStars,
+    name: "Deathly Waves",
+    url: "https://images.pexels.com/photos/3742711/pexels-photo-3742711.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 400.99,
     freeShipping: true,
-    category: "The Night Sky",
+    category: "Weather",
     amount: 0,
   },
   {
@@ -26,7 +26,7 @@ const products = [
     url: "https://images.pexels.com/photos/36487/above-adventure-aerial-air.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 132.23,
     freeShipping: false,
-    category: "The Night Sky",
+    category: "Weather",
     amount: 0,
   },
   {
@@ -35,7 +35,7 @@ const products = [
     url: "https://images.pexels.com/photos/42148/pexels-photo-42148.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 230,
     freeShipping: true,
-    category: "The Night Sky",
+    category: "Weather",
     amount: 0,
   },
   {
@@ -44,7 +44,7 @@ const products = [
     url: "https://images.pexels.com/photos/10169388/pexels-photo-10169388.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 50.99,
     freeShipping: false,
-    category: "The Night Sky",
+    category: "Weather",
     amount: 0,
   },
   {
@@ -121,11 +121,11 @@ const products = [
   },
   {
     id: 14,
-    name: "Wasteland of Sound",
-    url: "http://localhost:3000/static/media/wall3.aca4d334.jfif",
+    name: "Lone Traveller",
+    url: "https://images.pexels.com/photos/1461441/pexels-photo-1461441.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 450,
     freeShipping: true,
-    category: "Esoteric",
+    category: "Weather",
     amount: 0,
   },
   {

@@ -260,7 +260,10 @@ export const StyledPictureGrid = styled.div`
     justify-content: center;
     gap: 1rem;
   }
-  .singlePicture {
+`;
+
+export const SinglePictureContainer = styled.div`
+  &.singlePicture {
     width: 24%;
     background-size: cover;
     background-position: center;
@@ -362,5 +365,31 @@ export const StyledPicturePage = styled.div`
         color: ${white};
       }
     }
+  }
+`;
+
+export const ProductsPageContainer = styled.div`
+  padding-top: 7.3rem;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+
+  .conditions {
+    width: 25%;
+    margin: 1px 1rem;
+    min-height: 100px;
+  }
+
+  .productsList {
+    width: 75%;
+    display: grid;
+    margin: auto 1rem;
+    grid-template-columns: repeat(4, auto);
+    gap: 1rem;
+  }
+
+  .singlePicture {
+    width: 100%;
   }
 `;
