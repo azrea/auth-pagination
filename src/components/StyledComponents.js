@@ -118,28 +118,12 @@ export const Alert = styled.div`
 `;
 
 export const StyledHomePage = styled.main`
-  .logoImg {
-    padding: 5px 1em 0;
-    width: 9%;
-    object-fit: contain;
-    height: min-content;
-    align-self: center;
-
-    img {
-      height: 100px;
-      align-self: center;
-    }
-  }
   span {
     width: 100%;
     margin: 0 auto;
     align-self: flex-start;
     font-size: 1em;
     text-align: center;
-
-    h1 {
-      text-decoration: underline;
-    }
   }
 `;
 
@@ -151,26 +135,68 @@ export const StyledNav = styled.nav`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: ${black};
+  color: ${white};
 
-  .welcomeMessage {
+  .logoImg {
+    padding: 5px 1em 0;
+    width: 20%;
+    object-fit: contain;
+    height: min-content;
+    align-self: center;
+
+    img {
+      height: 100px;
+      align-self: center;
+    }
+  }
+
+  ul {
+    width: 50%;
+    list-style-type: none;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+  }
 
-    button {
-      margin-top: 3px;
-      width: 10%;
+  .iconContainer {
+    width: 20%;
+    font-size: 2rem;
+    display: flex;
+    justify-content: flex-end;
+
+    .icon {
+      margin: 1.5rem;
+    }
+
+    .basketNo {
+      position: absolute;
+      font-size: 1rem;
+      width: 25px;
+      height: 25px;
+      text-align: center;
+      top: 16px;
+      left: 45px;
+      border-radius: 50%;
       background-color: ${white};
-      border: none;
+      color: ${black};
     }
-    input {
-      margin: 2rem auto;
-      width: 90%;
-      padding: 0.5em;
-      font-size: 1em;
-    }
+  }
+
+  .navLink {
+    font-size: 1.5rem;
+    font-weight: 750;
+  }
+
+  ul > *,
+  .iconContainer > * {
+    transition: all 0.3s;
+    cursor: pointer;
+  }
+  ul > *:hover,
+  .iconContainer > *: hover {
+    transform: scale(1.25);
+    color: ${blue};
   }
 `;
 
@@ -242,21 +268,23 @@ export const StyledPictureGrid = styled.div`
     border-radius: 7px;
     border: ${white} solid 2px;
     display: flex;
-
+    transition: 0.3s all;
     text-align: center;
 
     .text {
-      display: none;
-    }
-
-    &:hover .text {
+      display: flex;
+      opacity: 0;
+      transition: 0.3s all;
       width: 100%;
       background-color: ${white};
       height: 300px;
-      display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+    }
+
+    &:hover .text {
+      opacity: 1;
     }
   }
 `;

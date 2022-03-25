@@ -27,12 +27,12 @@ const PictureGrid = () => {
 const PictureRow = () => {
   const productsArray = new Set([]);
 
-  while (productsArray.size < 4) {
+  while (productsArray.size < 3) {
     productsArray.add(randomNumber(36));
   }
   return (
     <div className="row">
-      {productsArray.size < 4 ? (
+      {productsArray.size < 3 ? (
         <h1>Loading</h1>
       ) : (
         [...productsArray].map((no) => {
