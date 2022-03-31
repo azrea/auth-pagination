@@ -22,7 +22,7 @@ const products = [
   },
   {
     id: 3,
-    name: "My bonnie flies over the ocean",
+    name: "Into the Unknown",
     url: "https://images.pexels.com/photos/36487/above-adventure-aerial-air.jpg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     price: 132.23,
     freeShipping: false,
@@ -343,6 +343,15 @@ const products = [
     category: "Animals",
     amount: 0,
     url: "https://images.pexels.com/photos/50557/peacock-bird-plumage-display-50557.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
+  },
+  {
+    id: 39,
+    name: "MLK's Dream",
+    price: 1000.01,
+    freeShipping: true,
+    category: "Food",
+    amount: 0,
+    url: "https://images.pexels.com/photos/8356208/pexels-photo-8356208.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
   },
 ];
 

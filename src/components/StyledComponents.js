@@ -137,7 +137,7 @@ export const StyledNav = styled.nav`
   justify-content: space-between;
   align-items: center;
   background-color: ${black};
-  color: ${white};
+  color: ${blue};
 
   .logoImg {
     padding: 5px 1em 0;
@@ -157,6 +157,7 @@ export const StyledNav = styled.nav`
     list-style-type: none;
     display: flex;
     justify-content: space-between;
+    justify-self: center;
   }
 
   .iconContainer {
@@ -196,7 +197,6 @@ export const StyledNav = styled.nav`
   ul > *:hover,
   .iconContainer > *: hover {
     transform: scale(1.25);
-    color: ${blue};
   }
 `;
 
@@ -269,7 +269,7 @@ export const SinglePictureContainer = styled.div`
     background-position: center;
     height: 300px;
     border-radius: 7px;
-    border: ${white} solid 2px;
+    // border: ${white} solid 2px;
     display: flex;
     transition: 0.3s all;
     text-align: center;
@@ -278,12 +278,14 @@ export const SinglePictureContainer = styled.div`
       display: flex;
       opacity: 0;
       transition: 0.3s all;
+      font-size: 1.2vw;
       width: 100%;
       background-color: ${white};
       height: 300px;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+      border-radius: 7px;
     }
 
     &:hover .text {
@@ -302,7 +304,7 @@ export const StyledPicturePage = styled.div`
   background-image: linear-gradient(${black}, ${white});
 
   .container {
-    max-height: 800px;
+    max-height: 70vh;
     position: relative;
     &:hover .overlay {
       opacity: 1;
@@ -313,7 +315,7 @@ export const StyledPicturePage = styled.div`
 
     img {
       width: 100%;
-      max-height: 800px;
+      max-height: 70vh;
       object-fit: contain;
       border: solid 2px ${white};
       border-radius: 10px;
@@ -333,7 +335,7 @@ export const StyledPicturePage = styled.div`
       padding: 0.5rem;
       transition: all 0.3s ease;
       opacity: 0;
-      font-size: 1.3rem;
+      font-size: 1.1rem;
 
       h1 {
         margin: 0.25rem auto;
@@ -359,7 +361,7 @@ export const StyledPicturePage = styled.div`
       transform: translateX(-50%);
 
       .icon {
-        font-size: 3rem;
+        font-size: 2.5rem;
         margin: auto 0.5rem;
         cursor: pointer;
         color: ${white};
@@ -374,6 +376,7 @@ export const ProductsPageContainer = styled.div`
   display: flex;
   flex-direction: row;
   width: 100%;
+  background-color: ${white};
 
   .conditions {
     width: 25%;
@@ -383,13 +386,13 @@ export const ProductsPageContainer = styled.div`
 
   .productsList {
     width: 75%;
-    display: grid;
-    margin: auto 1rem;
-    grid-template-columns: repeat(4, auto);
-    gap: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto 3px auto 1rem;
+    gap: 2px;
   }
 
   .singlePicture {
-    width: 100%;
+    width: 33%;
   }
 `;

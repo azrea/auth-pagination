@@ -7,15 +7,15 @@ import NavBar from "../components/NavBar";
 const ProductsPage = () => {
   const products = store.getState().products.data;
 
+  console.log(products.length);
   return (
     <>
       <NavBar />
       <ProductsPageContainer>
         <div className="conditions"></div>
-
         <div className="productsList">
           {products.map((product) => {
-            return <SinglePicture {...product} />;
+            return <SinglePicture key={product.id} {...product} />;
           })}
         </div>
       </ProductsPageContainer>

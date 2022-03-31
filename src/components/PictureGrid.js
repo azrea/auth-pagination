@@ -53,7 +53,6 @@ const RecentsRow = () => {
         <></>
       ) : (
         recent.map((number) => {
-          console.log(products[number - 1], number);
           return <SinglePicture key={number} {...products[number - 1]} />;
         })
       )}
