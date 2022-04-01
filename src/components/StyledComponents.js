@@ -316,6 +316,7 @@ export const StyledPicturePage = styled.div`
     img {
       width: 100%;
       max-height: 70vh;
+      min-height: 500px;
       object-fit: contain;
       border: solid 2px ${white};
       border-radius: 10px;
@@ -372,16 +373,50 @@ export const StyledPicturePage = styled.div`
 
 export const ProductsPageContainer = styled.div`
   padding-top: 7.3rem;
+  padding-bottom: 10px;
   min-height: 100vh;
   display: flex;
   flex-direction: row;
-  width: 100%;
-  background-color: ${white};
+  justify-content: flex-end;
+  width: 90%;
+  margin: auto;
 
   .conditions {
-    width: 25%;
+    position: fixed;
+    top: 25%;
+    left: 5%;
     margin: 1px 1rem;
     min-height: 100px;
+
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    align-self: center;
+
+    ul {
+      list-style-type: none;
+
+      li {
+        font-size: 1.2rem;
+        margin: 0.5rem auto;
+        cursor: pointer;
+      }
+    }
+
+    .priceContainer {
+      .priceRange {
+        width: 120%;
+      }
+      h1 {
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    span {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
   }
 
   .productsList {
@@ -389,10 +424,17 @@ export const ProductsPageContainer = styled.div`
     display: flex;
     flex-wrap: wrap;
     margin: auto 3px auto 1rem;
-    gap: 2px;
+    gap: 3px;
+    justify-content: flex-end;
   }
 
   .singlePicture {
     width: 33%;
+    height: 250px;
+
+    .text {
+      font-size: 1vw;
+      height: 250px;
+    }
   }
 `;
