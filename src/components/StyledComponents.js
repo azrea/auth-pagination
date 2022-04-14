@@ -400,6 +400,15 @@ export const ProductsPageContainer = styled.div`
         font-size: 1.2rem;
         margin: 0.5rem auto;
         cursor: pointer;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .active {
+        color: ${white};
+        background-color: ${black};
+        border-radius: 7px;
+        text-align: center;
+        transform: scale(1.1);
       }
     }
 

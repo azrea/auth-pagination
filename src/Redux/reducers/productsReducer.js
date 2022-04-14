@@ -1,11 +1,33 @@
 import info from "../../data";
 import * as actionTypes from "../actions/actionTypes";
+
+const categories = new Set([]);
+let highestPrice = 0;
+
+refineCategory();
+
+function refineCategory() {
+  info.forEach((product) => {
+    categories.add(product.category);
+    getHighestPrice(product.price);
+  });
+}
+function getHighestPrice(number) {
+  if (number >= highestPrice) {
+    highestPrice = number;
+  } else {
+    return;
+  }
+}
+
+let conditions = {};
+
 const initialState = {
   data: info,
   recent: [],
+  categories: [...categories],
+  maxPrice: highestPrice,
 };
-
-let conditions = {};
 
 const products = (state = initialState, action) => {
   if (action.type === actionTypes.addRecentProduct) {
@@ -37,8 +59,11 @@ add the array to the state.recent
   }
 
   if (action.type === actionTypes.filterCategory) {
-    conditions = { ...conditions, category: action.payload };
-
+    if (action.payload === "All") {
+      delete conditions.category;
+    } else {
+      conditions = { ...conditions, category: action.payload };
+    }
     return { ...state, data: refineProducts() };
   }
 

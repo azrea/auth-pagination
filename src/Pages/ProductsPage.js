@@ -1,17 +1,23 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { ProductsPageContainer } from "../components/StyledComponents";
 import store from "../Redux/store";
 import SinglePicture from "../components/SinglePicture";
 import NavBar from "../components/NavBar";
 import FilterList from "../components/FilterList";
+import * as actions from "../Redux/actions";
+import { useSelector } from "react-redux";
 
 const ProductsPage = () => {
-  const products = store.getState().products.data;
+  const products = useSelector((state) => state.products.data);
+  const categories = store.getState().products.categories;
+
+  const highestPrice = store.getState().products.maxPrice;
   return (
     <>
       <NavBar />
       <ProductsPageContainer>
-        <FilterList />
+        <FilterList categories={categories} highestPrice={highestPrice} />
+
         <div className="productsList">
           {products.map((product) => {
             return <SinglePicture key={product.id} {...product} />;

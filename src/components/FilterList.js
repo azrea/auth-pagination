@@ -1,25 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 import store from "../Redux/store";
+import * as actions from "../Redux/actions";
 
-const FilterList = () => {
-  const products = store.getState().products.data;
-  const categories = new Set([]);
-  let highestPrice = 0;
-  refineCategory();
+const FilterList = ({ categories, highestPrice }) => {
+  const [group, setGroup] = React.useState("All");
+  const [monetaryValue, setMonetaryValue] = React.useState(highestPrice);
 
-  function refineCategory() {
-    products.forEach((product) => {
-      categories.add(product.category);
-      getHighestPrice(product.price);
-    });
-  }
-  function getHighestPrice(number) {
-    if (number >= highestPrice) {
-      highestPrice = number;
-    } else {
-      return;
-    }
-  }
+  useEffect(() => {
+    store.dispatch(actions.filterPrice(monetaryValue));
+  }, [monetaryValue]);
 
   return (
     <div className="conditions">
@@ -30,23 +19,43 @@ const FilterList = () => {
         <h1>Category</h1>
 
         <ul>
-          <li>All</li>
+          <li
+            className={`${group == "All" && "active"}`}
+            onClick={() => {
+              store.dispatch(actions.filterCategory("All"));
+              setGroup("All");
+            }}
+          >
+            All
+          </li>
 
-          {[...categories].map((category) => {
-            return <li key={category}>{category}</li>;
+          {categories.map((category) => {
+            return (
+              <li
+                className={`${group == category && "active"}`}
+                onClick={() => {
+                  store.dispatch(actions.filterCategory(category));
+                  setGroup(category);
+                }}
+                key={category}
+              >
+                {category}
+              </li>
+            );
           })}
         </ul>
       </div>
       <br />
       <div className="priceContainer">
         <h1>Price</h1>
-        <h3>£{highestPrice}</h3>
+        <h3>£{monetaryValue}</h3>
         <input
           type="range"
           min="0"
           max={highestPrice}
-          class="priceRange"
-          value="0"
+          className="priceRange"
+          value={monetaryValue}
+          onChange={(e) => setMonetaryValue(e.target.value)}
         />
       </div>
       <br />
@@ -58,3 +67,9 @@ const FilterList = () => {
 };
 
 export default FilterList;
+
+// const Category = () => {
+//   return(
+
+//   )
+// }
