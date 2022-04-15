@@ -13,7 +13,7 @@ const ProductsPage = () => {
 
   const highestPrice = store.getState().products.maxPrice;
   return (
-    <>
+    <div className="bgColorWhite">
       <NavBar />
       <ProductsPageContainer>
         <FilterList categories={categories} highestPrice={highestPrice} />
@@ -24,7 +24,7 @@ const ProductsPage = () => {
           })}
         </div>
       </ProductsPageContainer>
-    </>
+    </div>
   );
 };
 

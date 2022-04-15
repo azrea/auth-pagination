@@ -68,7 +68,13 @@ add the array to the state.recent
   }
 
   if (action.type === actionTypes.filterShipping) {
-    conditions = { ...conditions, freeShipping: action.payload };
+    if (action.payload === false) {
+      delete conditions.freeShipping;
+    } else {
+      let boolString = action.payload.toString();
+
+      conditions = { ...conditions, freeShipping: boolString };
+    }
 
     return { ...state, data: refineProducts() };
   }
@@ -100,6 +106,8 @@ function refineProducts() {
     return Object.entries(conditions).every(([key, value]) => {
       if (key === "price") {
         return product[key] < value;
+      } else if (key === "freeShipping") {
+        return product[key] === true;
       } else {
         return product[key] == value;
       }

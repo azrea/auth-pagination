@@ -23,6 +23,10 @@ export const MainContainer = styled.main`
     color: inherit;
     width: 60%;
   }
+
+  .bgColorWhite {
+    background-color: ${blue};
+  }
 `;
 
 export const FormContainer = styled.div`
@@ -387,7 +391,7 @@ export const ProductsPageContainer = styled.div`
     left: 5%;
     margin: 1px 1rem;
     min-height: 100px;
-
+    font-weight: 800;
     display: flex;
     flex-direction: column;
     justify-self: center;
@@ -404,7 +408,7 @@ export const ProductsPageContainer = styled.div`
       }
 
       .active {
-        color: ${white};
+        color: ${blue};
         background-color: ${black};
         border-radius: 7px;
         text-align: center;

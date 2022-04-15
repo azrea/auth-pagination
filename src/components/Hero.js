@@ -12,7 +12,7 @@ const Hero = () => {
 
   useEffect(() => {
     const changeSlides = setInterval(() => {
-      setNumber(Math.floor(Math.random() * 36));
+      setNumber(Math.floor(Math.random() * state.length));
     }, 5000);
 
     return () => clearInterval(changeSlides);

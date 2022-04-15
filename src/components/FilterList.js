@@ -5,10 +5,15 @@ import * as actions from "../Redux/actions";
 const FilterList = ({ categories, highestPrice }) => {
   const [group, setGroup] = React.useState("All");
   const [monetaryValue, setMonetaryValue] = React.useState(highestPrice);
+  const [shippingStatus, setShippingStatus] = React.useState(false);
 
   useEffect(() => {
     store.dispatch(actions.filterPrice(monetaryValue));
   }, [monetaryValue]);
+
+  useEffect(() => {
+    store.dispatch(actions.filterShipping(shippingStatus));
+  }, [shippingStatus]);
 
   return (
     <div className="conditions">
@@ -60,16 +65,14 @@ const FilterList = ({ categories, highestPrice }) => {
       </div>
       <br />
       <span>
-        <h3>Free Shipping</h3> <input type="checkbox" />
+        <h3>Free Shipping</h3>{" "}
+        <input
+          type="checkbox"
+          onChange={(e) => setShippingStatus(e.target.checked)}
+        />
       </span>
     </div>
   );
 };
 
 export default FilterList;
-
-// const Category = () => {
-//   return(
-
-//   )
-// }
