@@ -121,6 +121,17 @@ export const Alert = styled.div`
   text-align: center;
 `;
 
+export const CartAlert = styled(Alert)`
+  max-width: 30%;
+  min-width: fit-content;
+  top: 75%;
+  z-index: 20;
+  background-color: ${green};
+  padding: 1.5rem;
+  font-size: 1rem;
+  margin: auto;
+`;
+
 export const StyledHomePage = styled.main`
   span {
     width: 100%;
@@ -177,6 +188,7 @@ export const StyledNav = styled.nav`
     .basketNo {
       position: absolute;
       font-size: 1rem;
+      font-weight: 800;
       width: 25px;
       height: 25px;
       text-align: center;
@@ -448,6 +460,98 @@ export const ProductsPageContainer = styled.div`
     .text {
       font-size: 1vw;
       height: 250px;
+    }
+  }
+`;
+
+export const StyledCartPage = styled.div`
+  padding-top: 7.3rem;
+  min-height: 100vh;
+  width: 100%;
+
+  .cartContainer {
+    width: 80%;
+
+    margin: auto;
+    margin-top: 3rem;
+  }
+  .itemSections {
+    width: 100%;
+    display: flex;
+    margin: auto;
+    justify-content: space-between;
+    text-align: right;
+    h2 {
+      width: 100%;
+      text-align: center;
+    }
+  }
+
+  .itemUnderline {
+    height: 1px;
+    background-color: black;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  .itemContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 3rem;
+    div {
+      flex: 1 1 0;
+
+      margin: auto;
+      text-align: center;
+    }
+
+    .quantityContainer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+
+      .quantityIcons {
+        margin: auto 10%;
+        font-size: 1.2rem;
+        cursor: pointer;
+      }
+    }
+    img {
+      width: 100%;
+      border-radius: 7px;
+    }
+  }
+
+  .cartDisclaimer {
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content center;
+    margin: auto;
+  
+    text-align:center;
+    h1{
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    a{
+      border-radius: 7px;
+      border: solid 2px black;
+      font-size: 1.5rem;
+      padding: 0.5rem;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+
+      &:hover{
+        transform: scale(1.2);
+
+      }
     }
   }
 `;

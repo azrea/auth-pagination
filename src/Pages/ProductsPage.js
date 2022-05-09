@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { ProductsPageContainer } from "../components/StyledComponents";
 import store from "../Redux/store";
 import SinglePicture from "../components/SinglePicture";
 import NavBar from "../components/NavBar";
 import FilterList from "../components/FilterList";
-import * as actions from "../Redux/actions";
 import { useSelector } from "react-redux";
 
 const ProductsPage = () => {

@@ -11,7 +11,6 @@ const SinglePicture = ({ name, price, url, id }) => {
       className="singlePicture"
       style={{
         backgroundImage: `url(${url})`,
-        cursor: "pointer",
       }}
       image={url}
     >

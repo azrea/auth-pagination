@@ -8,6 +8,7 @@ import { MainContainer } from "./components/StyledComponents";
 import Homepage from "./Pages/Homepage";
 import ProductsPage from "./Pages/ProductsPage";
 import PicturePage from "./Pages/PicturePage";
+import CartPage from "./Pages/CartPage";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -91,6 +92,8 @@ const App = () => {
         <Route path="/products" element={<ProductsPage />} />
 
         <Route path="/products/:id" element={<PicturePage />} />
+
+        <Route path="/cart" element={<CartPage />} />
       </Routes>
     </MainContainer>
   );

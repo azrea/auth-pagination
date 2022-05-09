@@ -4,8 +4,11 @@ import logoImg from "../images/logoImage.png";
 import { StyledNav } from "./StyledComponents";
 import { faBasketShopping, faUser } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import store from "../Redux/store";
 
 const NavBar = () => {
+  const amount = useSelector((store) => store.products.cart.length);
   return (
     <StyledNav>
       <div className="logoImg">
@@ -31,13 +34,13 @@ const NavBar = () => {
         </li>
       </ul>
 
-      <div className="iconContainer">
+      <Link to="/cart" className="iconContainer">
         <div style={{ position: "relative" }}>
           <FontAwesomeIcon icon={faBasketShopping} className="icon basket" />
-          <span className="basketNo">10</span>
+          <span className="basketNo">{amount}</span>
         </div>
         <FontAwesomeIcon icon={faUser} className="icon user" />
-      </div>
+      </Link>
     </StyledNav>
   );
 };

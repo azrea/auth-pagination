@@ -1,6 +1,4 @@
 // eslint-disable-next-line import/no-anonymous-default-export
-import StarInAJar from "./images/Star in a Jar.jpeg";
-import LightingUpTheStars from "./images/Lighting up the stars.jpeg";
 const products = [
   {
     id: 1,
