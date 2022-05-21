@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
+import store from "../Redux/store";
+import * as actions from "../Redux/actions";
 
 const CartPage = () => {
   const cart = useSelector((state) => state.products.cart);
@@ -13,9 +15,6 @@ const CartPage = () => {
     <>
       <NavBar />
       <StyledCartPage>
-        {/* need a picture of any image with an amount over zero 
-          need its amount next to it with an increment and decrement button
-          total at the end that changes as price goes up and down  */}
         {cart.length > 0 ? (
           <div className="cartContainer">
             <div className="itemSections">
@@ -30,6 +29,10 @@ const CartPage = () => {
               return <CartRow key={item.id} {...item} />;
             })}
             <div className="itemUnderline"></div>
+            {/* 
+            need a total price
+            */}
+            <div className="totalPrice"></div>
           </div>
         ) : (
           <div className="cartDisclaimer">
@@ -45,7 +48,7 @@ const CartPage = () => {
 
 export default CartPage;
 
-const CartRow = ({ url, amount, price }) => {
+const CartRow = ({ url, amount, price, id }) => {
   return (
     <>
       <div className="itemContainer">
@@ -54,17 +57,25 @@ const CartRow = ({ url, amount, price }) => {
         </div>
 
         <div>
-          <h2>{price}</h2>
+          <h2>£{price}</h2>
         </div>
 
         <div className="quantityContainer">
-          <FontAwesomeIcon icon={faPlus} className="quantityIcons" />
+          <FontAwesomeIcon
+            icon={faPlus}
+            className="quantityIcons"
+            onClick={() => store.dispatch(actions.increaseInCart(id, 1))}
+          />
           <h2>{amount}</h2>
-          <FontAwesomeIcon icon={faMinus} className="quantityIcons" />
+          <FontAwesomeIcon
+            icon={faMinus}
+            className="quantityIcons"
+            onClick={() => store.dispatch(actions.increaseInCart(id, -1))}
+          />
         </div>
 
         <div>
-          <h2>{price * amount}</h2>
+          <h2>£{(price * amount).toFixed(2)}</h2>
         </div>
       </div>
     </>

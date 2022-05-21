@@ -321,6 +321,9 @@ export const StyledPicturePage = styled.div`
 
   .container {
     max-height: 70vh;
+    max-width: 75%;
+    margin-top: 5rem;
+    object-fit: contain;
     position: relative;
     &:hover .overlay {
       opacity: 1;
@@ -471,7 +474,6 @@ export const StyledCartPage = styled.div`
 
   .cartContainer {
     width: 80%;
-
     margin: auto;
     margin-top: 3rem;
   }
@@ -514,14 +516,17 @@ export const StyledCartPage = styled.div`
       justify-content: space-between;
 
       .quantityIcons {
-        margin: auto 10%;
+        margin: auto 20%;
         font-size: 1.2rem;
         cursor: pointer;
       }
     }
     img {
-      width: 100%;
+      max-width: 200px;
       border-radius: 7px;
+      max-height: 250px;
+      object-fit: contain;
+      
     }
   }
 

@@ -39,12 +39,8 @@ export const removeFromCart = (payload) => ({
   payload: payload,
 });
 
-export const increaseInCart = (payload) => ({
+export const increaseInCart = (payload, guide) => ({
   type: actionTypes.increaseInCart,
   payload: payload,
-});
-
-export const decreaseInCart = (payload) => ({
-  type: actionTypes.decreaseInCart,
-  payload: payload,
+  guide: guide,
 });

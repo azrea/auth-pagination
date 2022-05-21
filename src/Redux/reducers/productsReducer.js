@@ -86,7 +86,25 @@ add the array to the state.recent
 
     cartItem = { ...cartItem[0], amount: 1 };
 
-    return { ...state, cart: [...state.cart, cartItem] };
+    return { ...state, cart: [cartItem, ...state.cart] };
+  }
+
+  if (action.type === actionTypes.increaseInCart) {
+    let newCart = state.cart.filter((item) => item.id !== action.payload);
+    let cartItem = state.cart.filter((item) => item.id == action.payload);
+    let amount = cartItem[0].amount;
+
+    amount = amount + parseInt(action.guide);
+
+    cartItem = { ...cartItem[0], amount: amount };
+
+    if (amount == 0 && parseInt(action.guide) == -1) {
+      return { ...state, cart: newCart };
+    } else {
+      newCart = [cartItem, ...newCart];
+    }
+
+    return { ...state, cart: newCart };
   }
 
   return state;
@@ -94,6 +112,7 @@ add the array to the state.recent
 
 export default products;
 
+//////////////////////////////////////////////////////////////
 function checkRecent(arr) {
   let set = new Set(arr);
 
@@ -123,13 +142,4 @@ function refineProducts() {
       }
     });
   });
-}
-
-function ensureUniqueItems(cart, item) {
-  for (var i = 0; i < cart.length; i++) {
-    if (cart[i].id === item.id) {
-      return true;
-    }
-  }
-  return false;
 }
